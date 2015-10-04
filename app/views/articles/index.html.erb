@@ -1,0 +1,21 @@
+<h1>Listing articles</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Year</th>
+    <th>Coop</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= link_to article.title, url_for({controller: 'articles', action: 'show', id: article.id}) %></td>
+      <td><%= article.author %></td>
+      <td><%= article.year %></td>
+      <td><%= article.coop %></td>
+      <td><%= article.text %></td>
+    </tr>
+  <% end %>
+</table>
